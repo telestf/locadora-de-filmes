@@ -67,7 +67,7 @@ export default {
       this.carrinho.push(filme.id);
     },
     quantidadeNoCarrinhoPorFilme: function(filme) {
-      return this.carrinho.filter(elem => elem === filme.id).length;
+      return this. carrinho.filter(elem => elem === filme.id).length;
     },
     validarPermissaoParaAdicionarNoCarrinho: function(filme) {
       return filme.estoqueDisponivel > this.quantidadeNoCarrinhoPorFilme(filme);
