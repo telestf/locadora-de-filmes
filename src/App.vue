@@ -32,17 +32,22 @@
         </b-card>  
       </b-row>
       <b-row v-else>
-        <h2>Carrinho</h2>
+        <Carrinho/>
       </b-row>
+
 
     </b-container>
   </div>
 </template>
 
 <script>
+
+import Carrinho from './components/Carrinho.vue'
+
 export default {
   name: 'App',
   components: {
+    Carrinho
   },
   data() {
     return {
