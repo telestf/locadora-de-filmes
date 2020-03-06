@@ -13,7 +13,7 @@
               class="form-control"
               id="primeiroNome"
               placeholder="Digite seu primeiro nome"
-              v-model="pedido.primeiroNome"
+              v-model.trim.lazy="pedido.primeiroNome"
             >
           </div>
 
@@ -24,7 +24,7 @@
               class="form-control"
               id="ultimoNome"
               placeholder="Digite seu último nome"
-              v-model="pedido.ultimoNome"
+              v-model.trim.lazy="pedido.ultimoNome"
             >
           </div>
         </div>
@@ -36,7 +36,7 @@
              class="form-control"
              id="endereco"
              placeholder="Digita o endereço"
-             v-model="pedido.endereco"
+             v-model.trim.lazy="pedido.endereco"
            >
          </div>
 
@@ -48,7 +48,7 @@
               class="form-control"
               id="cidade"
               placeholder="Digita a cidade"
-              v-model="pedido.cidade"
+              v-model.trim.lazy="pedido.cidade"
             >
           </div>
 
@@ -73,7 +73,7 @@
               class="form-control"
               id="cep"
               placeholder="Digita o CEP"
-              v-model="pedido.cep"
+              v-model.trim.lazy="pedido.cep"
             >
           </div>
         </div>
