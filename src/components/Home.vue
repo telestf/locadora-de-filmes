@@ -1,11 +1,11 @@
 <template>
   <div id="home">
-    <b-container>
-      <h1>{{ title }}</h1>
+    
+      
 
-      <h3 v-if="horas >= 9 && horas < 17" id="aberto" class="horario">Aberto</h3>
-      <h3 v-else-if="horas >= 17 && horas < 18" id="proximo-fechar" class="horario">Próximo de Fechar</h3>
-      <h3 v-else id="fechado" class="horario">Fechado</h3>
+      <h3 v-if="horas >= 9 && horas < 17" id="aberto" class="horario"><span class="spanHorario">Aberto</span></h3>
+      <h3 v-else-if="horas >= 17 && horas < 18" id="proximo-fechar" class="horario"><span class="spanHorario">Próximo de Fechar</span></h3>
+      <h3 v-else id="fechado" class="horario"><span class="spanHorario">Fechado</span></h3>
 
       <b-row>
         <b-col>
@@ -18,13 +18,17 @@
 
       <b-row class="cardss" v-if="mostrarFilmes">
         <b-card v-bind:key="filme.id" v-for="filme in filmesOrdenados" id="bcard"
-          :title=filme.titulo
           img-src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQJjFZSqrM6lP75FusvvBcU1wTPxXgqpBJgXE1Dre1YrrLJvMjK"
           img-alt="Image"
           img-top
           tag="article"
           class="mb-2"
         >
+          <router-link
+           tag="h5"
+           class="card-title"
+           :to="{ name: 'filme', params: { id: filme.id } }"
+         >{{ filme.titulo }}</router-link>
 
           <b-card-text>{{ filme.descricao }}</b-card-text>
 
@@ -60,7 +64,7 @@
       </b-row>
 
 
-    </b-container>   
+
   </div>
 </template>
 
@@ -133,8 +137,8 @@ export default {
 #fechado {
   color: red;
 }
-.horario {
-  background-color: black;
+.spanHorario {
+  background-color: black
 }
 .cardss {
   justify-content: space-between;
